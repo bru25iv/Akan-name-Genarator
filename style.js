@@ -76,13 +76,15 @@ form.addEventListener("submit", function (e) {
   }
 
   if (!genderValue) {
-    window.alert("Please select your gender.");
+    resultEl.textContent = "Please select your gender.";
+    akanNameText.textContent = "";
     genderInput.focus();
     return;
   }
 
   if (genderValue !== "male" && genderValue !== "female") {
-    window.alert("Please select a valid gender.");
+    resultEl.textContent = "Please select a valid gender.";
+    akanNameText.textContent = "";
     genderInput.focus();
     return;
   }
