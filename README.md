@@ -38,7 +38,7 @@ index.html
     ## Contact Information
 
 Email: bru25iv@gmail.com
-GitHub: 
+GitHub: https://bru25iv.github.io/Akan-name-Genarator/
 
 ## License and Copyright
 
