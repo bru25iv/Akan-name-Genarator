@@ -77,6 +77,19 @@ form {
     gap: 8px;
 }
 
+.dob-fields {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dob-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    flex: 1;
+}
+
 label {
     font-weight: 600;
     margin-bottom: 4px;
