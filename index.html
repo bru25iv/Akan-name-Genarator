@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akan Name Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1> Akan name generator. </h1>
+        <!-- sub-title -->
+        <p> This a Web Application that calculates the day of <br> the week a user was born and assigns <br> them Akan
+            (Ghanaian)
+            names based on their gender.</p>
+        <!--suggestion-->
+        <p> "Hint: Write Your date of birth,month,year to find your unique Akan name!"</p>
+
+        <form id="akan-form">
+            <div class="date">
+                <label for="birthdate">Date of birth:</label>
+                <input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2026-12-31" required>
+            </div>
+            <section class="gender-section">
+                <h2>Choose your gender</h2>
+                <div class="gender-select">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </section>
+            <section class="result">
+                <div id="result" class="name"></div>
+            </section>
+
+            <section id="akan-name-display" class="akan-name-display">
+                <h2>Your Akan Name</h2>
+                <p id="akan-name-text">Your Akan name will appear here after submission.</p>
+            </section>
+
+            <div class="button-group">
+                <button type="submit" id="submit-button">My Akan name</button>
+                <button type="reset" id="reset-button">Reset</button>
+            </div>
+
+        </form>
+
+
+
+    </div>
+    <script src="style.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,122 @@
+body {
+    margin: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+}
+
+.container {
+    border-radius: 10px;
+    border: 2px solid #e7bbbb;
+    padding: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #f1eeee;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dob-fields {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dob-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 110px;
+    flex: 1;
+}
+
+.dob-field label,
+label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.gender-section {
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gender-section h2 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.gender-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    background: #1f6feb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+button:hover {
+    background: #1759bf;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+#akan-name-display {
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+
+#akan-name-display h2 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+#akan-name-display p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.name,
+.male {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
