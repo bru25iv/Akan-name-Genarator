@@ -45,7 +45,7 @@ form.addEventListener("submit", function (e) {
 
   const birthdateInput = document.getElementById("birthdate");
   const genderInput = document.getElementById("gender");
-  const birthdateValue = birthdateInput.value;
+  const birthdateValue = birthdateInput.value.trim();
   const genderValue = genderInput.value.toLowerCase();
 
   if (!birthdateValue) {
@@ -58,12 +58,12 @@ form.addEventListener("submit", function (e) {
 
   const dateParts = birthdateValue.split("-");
 
-  if (dateParts.length !== 3 || !/^\d{4}$/.test(dateParts[0]) || !/^\d{2}$/.test(dateParts[1]) || !/^\d{2}$/.test(dateParts[2])) {
-    window.alert("Please enter a valid date in YYYY-MM-DD format.");
+  if (dateParts.length !== 3 || !/^\d{2}$/.test(dateParts[0]) || !/^\d{2}$/.test(dateParts[1]) || !/^\d{4}$/.test(dateParts[2])) {
+    window.alert("Please enter a valid date in DD-MM-YYYY format.");
     return;
   }
 
-  const [year, month, day] = dateParts.map(Number);
+  const [day, month, year] = dateParts.map(Number);
 
   if (day < 1 || day > 31) {
     window.alert("Please enter a valid day between 1 and 31.");
