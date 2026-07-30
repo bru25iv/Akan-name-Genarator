@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akan Name Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1> Akan name generator. </h1>
+        <!-- sub-title -->
+        <p> This a Web Application that calculates the day of <br> the week a user was born and assigns <br> them Akan
+            (Ghanaian)
+            names based on their gender.</p>
+        <!--suggestion-->
+        <p> "Hint: Write Your date of birth,month,year to find your unique Akan name!"</p>
+
+        <form id="akan-form">
+            <div class="date">
+                <label for="birthdate">Date of birth:</label>
+                <input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2100-12-31" required>
+            </div>
+            <section id="result">
+                <div class="male>" <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <br>
+                
+            </section>
+
+            <button type="submit" id="submit-button">My Akan name</button>
+
+        </form>
+
+
+
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+
+</html>
