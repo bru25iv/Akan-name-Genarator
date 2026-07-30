@@ -1,16 +1,68 @@
 body {
-    margin: 40px;
+    margin: 0;
+    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f7f7;
+    background: linear-gradient(135deg, #fdf2f8 0%, #eef6ff 100%);
+    color: #2f2a3f;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .container {
-    border-radius: 10px;
-    border: 2px solid #e7bbbb;
-    padding: 24px;
-    max-width: 700px;
+    border-radius: 20px;
+    border: 1px solid #e8d6e8;
+    padding: 28px;
+    max-width: 760px;
     margin: 0 auto;
-    background: #f1eeee;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 35px rgba(71, 69, 111, 0.12);
+}
+
+.hero {
+    margin-bottom: 20px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #f3e8ff;
+    color: #7c3aed;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.2;
+}
+
+.hero-text {
+    margin: 0 0 12px;
+    color: #5d5870;
+    line-height: 1.6;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.steps li {
+    background: #f8f7ff;
+    border: 1px solid #e7defd;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    color: #5b4b8b;
 }
 
 form {
@@ -25,20 +77,6 @@ form {
     gap: 8px;
 }
 
-.dob-fields {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.dob-field {
-    display: flex;
-    flex-direction: column;
-    min-width: 110px;
-    flex: 1;
-}
-
-.dob-field label,
 label {
     font-weight: 600;
     margin-bottom: 4px;
@@ -47,23 +85,39 @@ label {
 input,
 select,
 button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 11px 12px;
+    border: 1px solid #d9d3e7;
+    border-radius: 10px;
     font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.16);
+}
+
+.gender-section,
+.result,
+#akan-name-display {
+    background: #ffffff;
+    border: 1px solid #ece7f6;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .gender-section {
-    background: #ffffff;
-    border: 1px solid #dedede;
-    border-radius: 10px;
-    padding: 18px;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.gender-section h2 {
+.gender-section h2,
+#akan-name-display h2 {
     margin: 0;
     font-size: 1.05rem;
 }
@@ -74,50 +128,59 @@ button {
     gap: 8px;
 }
 
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 button {
-    background: #1f6feb;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
     color: white;
     border: none;
     cursor: pointer;
     width: fit-content;
+    font-weight: 600;
 }
 
 button:hover {
-    background: #1759bf;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.2);
+}
+
+button[type="reset"] {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+button[type="reset"]:hover {
+    box-shadow: 0 6px 14px rgba(107, 114, 128, 0.15);
+}
+
+.feedback {
+    min-height: 24px;
+    font-weight: 600;
+    color: #6d5ea7;
+}
+
+.feedback.error {
+    color: #c0392b;
+}
+
+.feedback.success {
+    color: #147d3b;
 }
 
 .result {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-    background: #ffffff;
-    border: 1px solid #dedede;
-    border-radius: 10px;
-}
-
-#akan-name-display {
-    padding: 18px;
-    background: #ffffff;
-    border: 1px solid #dedede;
-    border-radius: 10px;
-}
-
-#akan-name-display h2 {
-    margin: 0 0 8px;
-    font-size: 1.1rem;
+    gap: 10px;
 }
 
 #akan-name-display p {
     margin: 0;
-    color: #333;
+    color: #4b5563;
     line-height: 1.6;
-}
-
-#error-message {
-    color: #c0392b;
-    font-weight: 600;
-    margin-top: 8px;
 }
 
 .name,
@@ -125,4 +188,22 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
 }
