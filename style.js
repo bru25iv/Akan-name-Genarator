@@ -43,39 +43,57 @@ function calculateWeekdayIndex(year, month, day) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const birthdateValue = document.getElementById("birthdate").value;
-  const genderValue = document.getElementById("gender").value.toLowerCase();
+  const birthdateInput = document.getElementById("birthdate");
+  const genderInput = document.getElementById("gender");
+  const birthdateValue = birthdateInput.value;
+  const genderValue = genderInput.value.toLowerCase();
 
   if (!birthdateValue) {
-    resultEl.textContent = "Please enter your date of birth.";
+    window.alert("Please enter your date of birth.");
+    birthdateInput.focus();
+    resultEl.textContent = "";
     akanNameText.textContent = "Your Akan name will appear here after submission.";
     return;
   }
 
-  const [year, month, day] = birthdateValue.split("-").map(Number);
+  const dateParts = birthdateValue.split("-");
+
+  if (dateParts.length !== 3 || !/^\d{4}$/.test(dateParts[0]) || !/^\d{2}$/.test(dateParts[1]) || !/^\d{2}$/.test(dateParts[2])) {
+    window.alert("Please enter a valid date in YYYY-MM-DD format.");
+    return;
+  }
+
+  const [year, month, day] = dateParts.map(Number);
 
   if (day < 1 || day > 31) {
-    resultEl.textContent = "Please enter a valid day between 1 and 31.";
-    akanNameText.textContent = "";
+    window.alert("Please enter a valid day between 1 and 31.");
     return;
   }
 
   if (month < 1 || month > 12) {
-    resultEl.textContent = "Please enter a valid month between 1 and 12.";
-    akanNameText.textContent = "";
+    window.alert("Please enter a valid month between 1 and 12.");
+    return;
+  }
+
+  if (!genderValue) {
+    window.alert("Please select your gender.");
+    genderInput.focus();
     return;
   }
 
   if (genderValue !== "male" && genderValue !== "female") {
-    resultEl.textContent = "Please select a valid gender.";
-    akanNameText.textContent = "";
+    window.alert("Please select a valid gender.");
+    genderInput.focus();
     return;
   }
 
   const birthDate = new Date(year, month - 1, day);
-  if (Number.isNaN(birthDate.getTime())) {
-    resultEl.textContent = "Please enter a valid date.";
-    akanNameText.textContent = "";
+  if (
+    birthDate.getFullYear() !== year ||
+    birthDate.getMonth() !== month - 1 ||
+    birthDate.getDate() !== day
+  ) {
+    window.alert("Please enter a valid date.");
     return;
   }
 
