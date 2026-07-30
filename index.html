@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan Name Generator</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -22,27 +22,39 @@
         <form id="akan-form">
             <div class="date">
                 <label for="birthdate">Date of birth:</label>
-                <input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2100-12-31" required>
+                <input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2026-12-31" required>
             </div>
-            <section id="result">
-                <div class="male>" <label for="gender">Gender:</label>
+            <section class="gender-section">
+                <h2>Choose your gender</h2>
+                <div class="gender-select">
+                    <label for="gender">Gender:</label>
                     <select id="gender" name="gender" required>
+                        <option value="">Select gender</option>
                         <option value="male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
-                <br>
-                
+            </section>
+            <section class="result">
+                <div id="result" class="name"></div>
             </section>
 
-            <button type="submit" id="submit-button">My Akan name</button>
+            <section id="akan-name-display" class="akan-name-display">
+                <h2>Your Akan Name</h2>
+                <p id="akan-name-text">Your Akan name will appear here after submission.</p>
+            </section>
+
+            <div class="button-group">
+                <button type="submit" id="submit-button">My Akan name</button>
+                <button type="reset" id="reset-button">Reset</button>
+            </div>
 
         </form>
 
 
 
     </div>
-    <script src="/script.js"></script>
+    <script src="style.js"></script>
 </body>
 
 
