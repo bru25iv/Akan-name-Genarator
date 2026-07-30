@@ -42,7 +42,7 @@ GitHub: https://bru25iv.github.io/Akan-name-Genarator/
 
 ## License and Copyright
 
-© 2026 Bruno. This project is licensed under the MIT License—
+© 2026 Bruno lrungu. This project is licensed under the MIT License—
 see the `LICENSE` file for details, or update this section with the
 license of your choice.
    
