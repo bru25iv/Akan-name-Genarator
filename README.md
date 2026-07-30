@@ -34,6 +34,17 @@ index.html
 2. Go to the repository's **Settings > Pages**.
 3. Set the source branch to main.
 4. Visit the URL GitHub provides to see your live site.
+
+    ## Contact Information
+
+Email: bru25iv@gmail.com
+GitHub: https://bru25iv.github.io/Akan-name-Genarator/
+
+## License and Copyright
+
+© 2026 Bruno lrungu. This project is licensed under the MIT License—
+see the `LICENSE` file for details, or update this section with the
+license of your choice.
    
  ##Author
    Bruno lrungu
