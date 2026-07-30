@@ -43,35 +43,39 @@ function calculateWeekdayIndex(year, month, day) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const birthdateInput = document.getElementById("birthdate");
+  const dayInput = document.getElementById("birth-day");
+  const monthInput = document.getElementById("birth-month");
+  const yearInput = document.getElementById("birth-year");
   const genderInput = document.getElementById("gender");
-  const birthdateValue = birthdateInput.value.trim();
   const genderValue = genderInput.value.toLowerCase();
 
-  if (!birthdateValue) {
+  const day = Number(dayInput.value);
+  const month = Number(monthInput.value);
+  const year = Number(yearInput.value);
+
+  if (!dayInput.value || !monthInput.value || !yearInput.value) {
     window.alert("Please enter your date of birth.");
-    birthdateInput.focus();
+    if (!dayInput.value) {
+      dayInput.focus();
+    } else if (!monthInput.value) {
+      monthInput.focus();
+    } else {
+      yearInput.focus();
+    }
     resultEl.textContent = "";
     akanNameText.textContent = "Your Akan name will appear here after submission.";
     return;
   }
 
-  const dateParts = birthdateValue.split("-");
-
-  if (dateParts.length !== 3 || !/^\d{2}$/.test(dateParts[0]) || !/^\d{2}$/.test(dateParts[1]) || !/^\d{4}$/.test(dateParts[2])) {
-    window.alert("Please enter a valid date in DD-MM-YYYY format.");
-    return;
-  }
-
-  const [day, month, year] = dateParts.map(Number);
-
   if (day < 1 || day > 31) {
     window.alert("Please enter a valid day between 1 and 31.");
+    dayInput.focus();
     return;
   }
 
   if (month < 1 || month > 12) {
     window.alert("Please enter a valid month between 1 and 12.");
+    monthInput.focus();
     return;
   }
 
@@ -108,6 +112,7 @@ form.addEventListener("submit", function (e) {
 });
 
 resetButton.addEventListener("click", function () {
+  form.reset();
   resultEl.textContent = "";
   akanNameText.textContent = "Your Akan name will appear here after submission.";
 });
