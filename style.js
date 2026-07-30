@@ -53,15 +53,23 @@ form.addEventListener("submit", function (e) {
   const month = Number(monthInput.value);
   const year = Number(yearInput.value);
 
-  if (!dayInput.value || !monthInput.value || !yearInput.value) {
-    window.alert("Please enter your date of birth.");
-    if (!dayInput.value) {
-      dayInput.focus();
-    } else if (!monthInput.value) {
-      monthInput.focus();
-    } else {
-      yearInput.focus();
-    }
+  let missingField = null;
+  let missingMessage = "";
+
+  if (!dayInput.value) {
+    missingField = dayInput;
+    missingMessage = "Please enter your day of birth.";
+  } else if (!monthInput.value) {
+    missingField = monthInput;
+    missingMessage = "Please enter your month of birth.";
+  } else if (!yearInput.value) {
+    missingField = yearInput;
+    missingMessage = "Please enter your year of birth.";
+  }
+
+  if (missingField) {
+    window.alert(missingMessage);
+    missingField.focus();
     resultEl.textContent = "";
     akanNameText.textContent = "Your Akan name will appear here after submission.";
     return;
@@ -80,8 +88,9 @@ form.addEventListener("submit", function (e) {
   }
 
   if (!genderValue) {
-    resultEl.textContent = "Please select your gender.";
-    akanNameText.textContent = "";
+    window.alert("Please select your gender.");
+    resultEl.textContent = "";
+    akanNameText.textContent = "Your Akan name will appear here after submission.";
     genderInput.focus();
     return;
   }
