@@ -114,6 +114,12 @@ button:hover {
     line-height: 1.6;
 }
 
+#error-message {
+    color: #c0392b;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
 .name,
 .male {
     display: flex;
