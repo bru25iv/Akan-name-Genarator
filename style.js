@@ -28,7 +28,7 @@ const days = [
   "Saturday",
 ];
 
-const form = document.getElementById("akan-form");
+const form = document.getElementById("submit");
 const resultEl = document.getElementById("result");
 const akanNameText = document.getElementById("akan-name-text");
 const resetButton = document.getElementById("reset-button");
