@@ -21,7 +21,10 @@ Sunday     Kwasi      Akosua
  Thursday  Yaw        Yaa         
  Friday    Kofi      Afua        
 Saturday   Kwame      Ama        
-
+## Languages used
+HTML
+CSS
+Javascript
 ## Files
 index.html
   styles.css
@@ -43,7 +46,7 @@ GitHub: https://bru25iv.github.io/Akan-name-Genarator/
 ## License and Copyright
 
 © 2026 Bruno lrungu. This project is licensed under the MIT License—
-see the `LICENSE` file for details, or update this section with the
+see the LICENSE file for details, or update this section with the
 license of your choice.
    
  ##Author
