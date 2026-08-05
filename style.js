@@ -28,16 +28,14 @@ const days = [
   "Saturday",
 ];
 
-const form = document.getElementById("submit");
+const form = document.getElementById("name-form");
 const resultEl = document.getElementById("result");
 const akanNameText = document.getElementById("akan-name-text");
 const resetButton = document.getElementById("reset-button");
 
 function calculateWeekdayIndex(year, month, day) {
-  const CC = Math.floor(year / 100);
-  const YY = year % 100;
-  const d = ((4 * CC - 2 * CC - 1) + 45 * YY + 1026 * (month + 1) + day) % 7;
-  return ((d % 7) + 7) % 7;
+  const date = new Date(year, month - 1, day);
+  return date.getDay();
 }
 
 form.addEventListener("submit", function (e) {
